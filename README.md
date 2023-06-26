@@ -4,6 +4,8 @@ Build 2 Lambda functions.
 
 ---
 
+<img src="images/Introduction-to-AWS-Lambda-Serverless-Functions_fis.png"/>
+
 ### **What is AWS Lambda?**
 
 ```
@@ -331,7 +333,7 @@ docker ps
 
 Run docker kill to stop the container. 
 ```shell
-docker kill
+docker kill [CONTAINER ID]
 ```
 
 3. Push it to AWS ECR (Elastic Container Registry)
