@@ -1,0 +1,20 @@
+# ==================================================
+# Title: Dockerfile w/ Lambda function dependencies
+# Author: Mattithyahu
+# Created Date: 26/06/2023
+# ==================================================
+
+FROM public.ecr.aws/lambda/python:3.9
+
+# Install the function's dependencies using file requirements.txt
+# from your project folder.
+COPY ./requirements.txt  ./
+RUN pip install --upgrade pip 
+RUN  pip3 install -r requirements.txt 
+
+# Copy function code to the path to your Lambda function code.
+COPY ./app.py ${LAMBDA_TASK_ROOT}
+COPY ./app.py ./
+
+# Set the CMD to your handler
+CMD [ "app.lambda_handler" ] 
